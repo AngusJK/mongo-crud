@@ -7,7 +7,10 @@ const DB_URL = `mongodb://${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}`;
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-mongoose.connect(DB_URL, {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/motivation', {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
+});
 
 const con = mongoose.connection;
 
